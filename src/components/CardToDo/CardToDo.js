@@ -17,15 +17,21 @@ export const CardToDo = ({ title, description, commentary, id }) => {
       <div className="col-5">
         <h1>{title}</h1>
         <p>{description}</p>
-        <div className="card">
+        {
+          commentary === undefined ?
+          <div className="alert alert-info">
+            No hay comentarios
+          </div> :
+          <div className="card mb-4">
           <div className="card-header">Comentario</div>
           <div className="card-body">
             <h5 className="card-title">Nuevo Comentario</h5>
             <p className="card-text">
-              <p>{commentary}</p>
+              {commentary}
             </p>
           </div>
         </div>
+        }
       </div>
       <div className="mb-3">
         <label className="form-label">Agregar Comentario</label>
